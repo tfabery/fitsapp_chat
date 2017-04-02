@@ -14,10 +14,7 @@
 
   <body>
     <div class="container">
-      <div class="flash">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-      </div>
+      <%= render 'shared/flash_notices' %>
       <%= yield %>
     </div>
   </body>

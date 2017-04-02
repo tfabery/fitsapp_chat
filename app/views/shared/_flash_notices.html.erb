@@ -1,0 +1,10 @@
+<% [:notice, :success, :error, :alert].each do |level| %>
+	<% unless flash[level].blank? %>
+		<aside id="flash_notice" class="<%= level %>" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    <span aria-hidden="true">&times;</span>
+		  </button>
+			<%= flash[level] %>
+		</aside>
+	<% end %>
+<% end %>
