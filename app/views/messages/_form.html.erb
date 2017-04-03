@@ -1,0 +1,7 @@
+<%= form_for message, remote: true, authenticity_token: true do |f| %>
+<div class="field">
+  <%= f.text_field :content, placeholder: 'Enter to Send', autofocus: true %>
+</div>
+
+<%= f.hidden_field :chat_id, value: chat.id %>
+<% end %>

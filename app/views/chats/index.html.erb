@@ -1,0 +1,11 @@
+<div class="chats">
+  <% if @chats.length > 0 %>
+    <% @chats.each do |chat| %>
+      <%= render 'chats/chat', chat: chat %>
+    <% end %>
+  <% else %>
+    <h1>Start chatting by clicking New Chat!</h1>
+  <% end %>
+
+  <%= link_to 'New Chat', new_user_chat_path(current_user.id) %>
+</div>

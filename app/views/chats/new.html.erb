@@ -1,0 +1,15 @@
+<%= form_for [current_user, @chat] do |f| %>
+<div class="field">
+  <%= f.label :to %>
+  <%= f.collection_select :other_user, @users, :id, :full_name %>
+</div>
+
+<div class="field">
+  <%= f.label :message %>
+  <%= f.text_field :message, value: '' %>
+</div>
+
+<div class="actions">
+  <%= f.submit "Send" %>
+</div>
+<% end %>

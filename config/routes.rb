@@ -4,5 +4,10 @@ Rails.application.routes.draw do
 
   root 'static_pages#index'
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :chats, only: [:index, :show, :new, :create]
+  end
+  resources :messages, only: [:create]
+
+  mount ActionCable.server => '/cable'
 end
