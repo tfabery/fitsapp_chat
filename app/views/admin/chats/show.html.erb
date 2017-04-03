@@ -1,0 +1,6 @@
+<div class="messages">
+  <% if @chat.messages.any? %>
+    <h1>Click message to edit</h1>
+    <%= render partial: 'admin/messages/message', collection: @chat.messages.order(id: :asc), as: :message, locals: {chat: @chat} %>
+  <% end %>
+</div>

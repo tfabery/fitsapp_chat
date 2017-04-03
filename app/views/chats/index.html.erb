@@ -1,5 +1,5 @@
 <div class="chats">
-  <% if @chats.length > 0 %>
+  <% if @chats.any? %>
     <% @chats.each do |chat| %>
       <%= render 'chats/chat', chat: chat %>
     <% end %>

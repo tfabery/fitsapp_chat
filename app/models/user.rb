@@ -14,7 +14,11 @@ class User < ApplicationRecord
     first_name + ' ' + last_name
   end
 
-  def self.all_except(user)
-    where.not(id: user)
+  def self.non_admin_except(user)
+    where.not(id: user, role: :admin)
+  end
+
+  def self.all_except_admin()
+    where.not(role: :admin)
   end
 end

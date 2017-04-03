@@ -1,0 +1,14 @@
+<%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-lg' %>
+<div class="instruction">
+  <h1>Click on a chat to edit/delete messages</h1>
+</div>
+
+<div class="chats">
+  <% if @chats.any? %>
+    <% @chats.each do |chat| %>
+      <%= link_to chat.name, admin_chat_path(chat) %>
+    <% end %>
+  <% else %>
+    <h1>We need some users!</h1>
+  <% end %>
+</div>

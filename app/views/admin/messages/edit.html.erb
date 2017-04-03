@@ -1,0 +1,9 @@
+<%= form_for :admin, url: {action: 'update'}, method: :patch do |f| %>
+  <div class="field">
+    <%= f.text_field :content, value: @message.content, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>

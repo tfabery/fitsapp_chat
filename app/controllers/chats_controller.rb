@@ -7,7 +7,7 @@ class ChatsController < ApplicationController
 
   def new
     @chat = Chat.new(identifier: SecureRandom.hex)
-    @users = User.all_except(current_user.id)
+    @users = User.non_admin_except(current_user.id)
   end
 
   def create

@@ -5,4 +5,8 @@ class Chat < ApplicationRecord
   has_many :users, through: :subscriptions
 
   validates :identifier, presence: true, uniqueness: true, case_sensitive: false
+
+  def name
+    users.map { |user| user.full_name }.join(' and ')
+  end
 end

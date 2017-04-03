@@ -7,7 +7,14 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :chats, only: [:index, :show, :new, :create]
   end
+
   resources :messages, only: [:create]
+
+  namespace 'admin' do
+    resources :chats, only: [:index, :show] do
+      resources :messages, only: [:edit, :update, :destroy]
+    end
+  end
 
   mount ActionCable.server => '/cable'
 end

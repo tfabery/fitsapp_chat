@@ -1,0 +1,4 @@
+<div class="message-show">
+  <%= link_to message.user.full_name + ': ' + message.content, edit_admin_chat_message_path(chat, message) %>
+  <%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, admin_chat_message_path(chat, message), method: :delete %>
+</div>
