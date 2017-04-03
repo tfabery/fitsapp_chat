@@ -42,7 +42,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry'
   gem 'rspec-rails'
-  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -57,8 +57,8 @@ end
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
