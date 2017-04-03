@@ -16,6 +16,9 @@
   <body>
     <div class="container">
       <%= render 'shared/flash_notices' %>
+      <% if current_user %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-lg' %>
+      <% end %>
       <%= yield %>
     </div>
   </body>
